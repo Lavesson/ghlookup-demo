@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/Lavesson/ghlookup-demo/issues"
   },
-  "homepage": "https://github.com/Lavesson/ghlookup-demo#readme"
+  "homepage": "https://github.com/Lavesson/ghlookup-demo#readme",
+  "dependencies": {
+    "angular": "^1.6.6"
+  }
 }
