@@ -10,6 +10,19 @@
             padding-bottom: 6rem;
         }
 
+        .show-hide {
+            opacity: 1;
+        }
+
+        .show-hide.ng-hide {
+            /* ng-hide is active when hiding something with ng-show */
+            opacity: 0;
+        }
+
+        .show-hide.ng-hide-remove {
+            transition: all 1.0s ease;
+        }
+
         .portrait {
             border-radius: 5pt;
         }
@@ -26,7 +39,7 @@
         </div>
 
         <div class="row">
-            <div class="col-md-12" ng-show="result === status.ok">
+            <div class="col-md-12 show-hide" ng-show="result === status.ok">
                 <div class="alert alert-success" role="alert">
                     User <strong>{{data.login}}</strong> was found! Yay!
                 </div>
@@ -34,12 +47,12 @@
                 <!-- Bind "data" from our controller to a custom component -->
                 <all-is-good data="data"></all-is-good>
             </div>
-            <div class="col-md-12" ng-show="result === status.notFound">
+            <div class="col-md-12 show-hide" ng-show="result === status.notFound">
                 <div class="alert alert-warning" role="alert">
                     The user <strong>{{data.username}}</strong> could not be found. Sorry about that :-(
                 </div>
             </div>
-            <div class="col-md-12" ng-show="result === status.whoKnows">
+            <div class="col-md-12 show-hide" ng-show="result === status.whoKnows">
                 <div class="alert alert-danger" role="alert">
                     Oh noes! Something went terribly wrong while searching for <strong>{{data.username}}</strong>!
                 </div>
@@ -48,6 +61,7 @@
     </div>
 
     <script src="../node_modules/angular/angular.min.js"></script>
+    <script src="../node_modules/angular-animate/angular-animate.min.js"></script>
     <script src="code.js"></script>
 </body>
 </html>

@@ -1,8 +1,9 @@
-angular.module('GithubApp', [])
+// Note 1: We actually have a dependency in our list!
+angular.module('GithubApp', ['ngAnimate'])
 
-// Note 1: This is just a chained call on whatever "angular.module" returns
-// Note 2: We're injecting another magic AngularJS thingie ($http). This is a core service in AngularJS.
-// Note 3: We're using a simple component (check the bottom).
+// Note 2: This is just a chained call on whatever "angular.module" returns
+// Note 3: We're injecting another magic AngularJS thingie ($http). This is a core service in AngularJS.
+// Note 4: We're using a simple component (check the bottom).
 .controller('ghController', function ($scope, $http) {
     const BaseUrl = 'https://api.github.com';
     $scope.data = {};
