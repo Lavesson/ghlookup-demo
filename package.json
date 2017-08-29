@@ -1,0 +1,19 @@
+{
+  "name": "ghlookup-demo",
+  "version": "1.0.0",
+  "description": "A small demo on how to make REST-service calls with Angular.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lavesson/ghlookup-demo.git"
+  },
+  "author": "Eric Lavesson",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Lavesson/ghlookup-demo/issues"
+  },
+  "homepage": "https://github.com/Lavesson/ghlookup-demo#readme"
+}
