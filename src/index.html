@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Github Lookup</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <style>
+        .spacy-stuffs {
+            padding-top: 2rem;
+            padding-bottom: 6rem;
+        }
+    </style>
+</head>
+<body ng-app="GithubApp">
+    <div class="container" ng-controller="ghController">
+        <!-- Search bar -->
+        <div class="input-group spacy-stuffs">
+            <input type="text" class="form-control" ng-model="username" placeholder="Enter Github username...">
+            <span class="input-group-btn">
+                    <button class="btn btn-default" type="button" ng-click="search()">Search!</button>
+                </span>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12" ng-show="result === status.ok">
+                <div class="alert alert-success" role="alert">
+                    User <strong>{{data.login}}</strong> was found! Yay!
+                </div>
+            </div>
+            <div class="col-md-12" ng-show="result === status.notFound">
+                <div class="alert alert-warning" role="alert">
+                    The user <strong>{{data.username}}</strong> could not be found. Sorry about that :-(
+                </div>
+            </div>
+            <div class="col-md-12" ng-show="result === status.whoKnows">
+                <div class="alert alert-danger" role="alert">
+                    Oh noes! Something went terribly wrong while searching for <strong>{{data.username}}</strong>!
+                </div>
+            </div>
+        </div>
+
+        <pre>{{data | json}}</pre>
+    </div>
+
+    <script src="../node_modules/angular/angular.min.js"></script>
+    <script src="code.js"></script>
+</body>
+</html>
