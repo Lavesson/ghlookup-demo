@@ -13,7 +13,8 @@ angular.module('GithubApp', ['ngAnimate'])
         noSearchYet: -1,
         ok: 0,
         notFound: 1,
-        other: 2
+        other: 2,
+        loading: 3
     };
 
     // Default value when initializing the app
@@ -21,11 +22,13 @@ angular.module('GithubApp', ['ngAnimate'])
 
     // This is where we'll end up when clicking the search button
     $scope.search = function () {
-        // 1. Grab the username. I'll put it in a separate variable for easier access, that's all.
+        $scope.result = $scope.status.loading
+
+        // Grab the username. I'll put it in a separate variable for easier access, that's all.
         // Note that we're using the ES6 keyword 'let' to declare the variable
         let username = $scope.username;
 
-        // 2. Make an *asynchronous* call to api.github.com/users/whatever-we-typed
+        // Make an *asynchronous* call to api.github.com/users/whatever-we-typed
         // Note that we're using template strings from ES6 here. This is a perfect use-case for them!
         $http.get(BaseUrl + `/users/${username}`).then(response => {
             // 3a. This is where we'll end up if everything is fine

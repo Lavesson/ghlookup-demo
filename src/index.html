@@ -39,6 +39,8 @@
         </div>
 
         <div class="row">
+            <img class="col-md-1 col-md-offset-6" width="100" ng-show="result === status.loading" src="../img/ajax-loader.gif">
+
             <div class="col-md-12 show-hide" ng-show="result === status.ok">
                 <div class="alert alert-success" role="alert">
                     User <strong>{{data.login}}</strong> was found! Yay!
