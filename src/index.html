@@ -9,6 +9,10 @@
             padding-top: 2rem;
             padding-bottom: 6rem;
         }
+
+        .portrait {
+            border-radius: 5pt;
+        }
     </style>
 </head>
 <body ng-app="GithubApp">
@@ -26,6 +30,9 @@
                 <div class="alert alert-success" role="alert">
                     User <strong>{{data.login}}</strong> was found! Yay!
                 </div>
+
+                <!-- Bind "data" from our controller to a custom component -->
+                <all-is-good data="data"></all-is-good>
             </div>
             <div class="col-md-12" ng-show="result === status.notFound">
                 <div class="alert alert-warning" role="alert">
@@ -38,8 +45,6 @@
                 </div>
             </div>
         </div>
-
-        <pre>{{data | json}}</pre>
     </div>
 
     <script src="../node_modules/angular/angular.min.js"></script>

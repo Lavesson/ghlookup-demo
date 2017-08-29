@@ -1,0 +1,14 @@
+<div class="media">
+    <div class="media-left">
+        <a href="#">
+            <img class="media-object portrait" width="350" src="{{$ctrl.data.avatar_url}}" alt="...">
+        </a>
+    </div>
+    <div class="media-body">
+        <h2 class="media-heading">{{$ctrl.data.name}}</h2>
+        <div>
+            User <strong>{{$ctrl.data.login}}</strong> has {{$ctrl.data.public_repos}} public repos available,
+            and <strong>{{$ctrl.data.followers}} followers</strong><span ng-if="$ctrl.data.company">. {{$ctrl.data.login}} is hopefully happy at <strong>{{$ctrl.data.company}}</strong> since it's listed as {{$ctrl.data.login}}'s workplace!</span>.
+        </div>
+    </div>
+</div>
